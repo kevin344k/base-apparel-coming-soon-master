@@ -1,0 +1,289 @@
+//## Colors
+
+//### Primary
+
+$Desaturated_Red: hsl(0, 36%, 70%);
+$Soft_Red: hsl(0, 93%, 68%);
+
+//### Neutral
+
+$Dark_Grayish_Red: hsl(0, 6%, 24%);
+
+//### Gradients
+
+//$Linear1: linaer-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+//$Linear2: linaer-gradient(135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%));
+$grad1: linear-gradient(135deg, #FFFFFF, #FFF4F4);
+$grad2: linear-gradient(135deg, #F7BEBE, #ED8B8B);
+
+//## Typography
+
+//### Body Copy
+
+$Font_size: 1.6rem;
+$font-family: 'Josefin Sans', sans-serif;
+//### Font
+
+//- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+//- Weights: 300, 400, 600;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: $Font_size;
+    font-family: $font-family;
+    width: 100vw;
+    height: 100%;
+    background-image: $grad1;
+    background-repeat: no-repeat;
+    //display: flex;
+
+}
+
+main {
+    width: 375px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .div-logo {
+        width: 100%;
+        padding: 30px;
+
+        .span--logo {
+            display: block;
+            background-image: url("../images/logo.svg");
+            width: 158px;
+            height: 33px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+        }
+    }
+
+    .section--img {
+        width: 100%;
+
+        .div--img {
+            width: 375px;
+            height: 250px;
+            background-image: url("../images/hero-mobile.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    .section-down {
+        margin-top: 55px;
+        margin-bottom: 30px;
+        width: 375px;
+        text-align: center;
+        padding: 0px 20px;
+
+        .title {
+
+            text-transform: uppercase;
+            font-size: 5rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: $Dark_Grayish_Red;
+
+            span {
+                font-weight: 300;
+                color: $Desaturated_Red;
+            }
+        }
+
+        .text-long {
+            margin: 25px 0px;
+            font-size: 1.7rem;
+            font-weight: 400;
+            line-height: 25px;
+            color: $Desaturated_Red;
+        }
+
+        .div--form {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            align-items: center;
+            width: 90%;
+            padding: 0px 10px;
+            border-radius: 50px;
+            border: 1px solid $Desaturated_Red;
+            position: relative;
+
+            .input-email {
+                width: 200px;
+                background: none;
+                border: none;
+                outline: none;
+
+                &::placeholder {
+                    color: $Desaturated_Red;
+                }
+            }
+
+            .ico-error {
+                display: block;
+                width: 25px;
+                height: 20px;
+                background-image: url("../images/icon-error.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                //margin-left: 90px;
+            }
+
+            button {
+                width: 80px;
+                height: 40px;
+                background-image: $grad2;
+                border-radius: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                outline: none;
+                border: none;
+                position: relative;
+                left: 30px;
+                box-shadow: 1px 2px 10px 5px #F7BEBE;
+                cursor: pointer;
+
+                &:active {
+                    transform: scale(.8);
+                }
+
+                span {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    background-image: url("../images/icon-arrow.svg");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+
+        .txt-error {
+            font-size: 1.2rem;
+            text-align: left;
+            color: $Soft_Red;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .div-error {
+            border: 1px solid $Soft_Red;
+        }
+    }
+
+
+}
+
+@media(min-width:1440px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+    }
+
+    main {
+        max-width: none;
+        min-width: none;
+        flex-direction: row;
+        //justify-content: space-between;
+        // gap: 10px;
+        width: 100vw;
+height: 100vh;
+
+        .div-logo {
+            display: none;
+        }
+
+        .section--img {
+
+            order: 2;
+            width: 35%;
+            height: 100%;
+
+            .div--img {
+                width: 100%;
+                height: 100vh;
+
+                background-image: url("../images/hero-desktop.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
+        .section-down {
+            width: 65%;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            height: 100vh;
+            order: 1;
+            text-align: left;
+            justify-content: flex-start;
+          
+            display: flex;
+            padding: 2% 15%;
+            flex-direction: column;
+            background-image: url("../images/bg-pattern-desktop.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            .title {
+                letter-spacing: 20px;
+                margin-top: 220px;
+            }
+
+            .div-logo2 {
+                width: 100%;
+                //margin-bottom: 60%;
+                padding-top: 20px;
+
+                .span--logo {
+                    display: block;
+                    background-image: url("../images/logo.svg");
+                    width: 158px;
+                    height: 33px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                   
+                }
+            }
+
+            .div--form {
+                margin: 0;
+                max-width: 400px;
+                .ico-error {
+                    position: absolute;
+                    left: calc(100% - 76px);;
+                }
+               button{
+                left: 100px;
+               }
+            }
+        }
+    }
+}
+
+
